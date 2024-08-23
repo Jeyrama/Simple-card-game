@@ -35,3 +35,26 @@ Example:
 
 
 // Solution
+
+function winner(deckSteve, deckJosh) {
+  let rank = ['2','3','4','5','6','7','8','9','T','J','Q','K','A'];
+  let steve_score = 0;
+  let josh_score  = 0;
+
+  for (let card_idx = 0; card_idx < deckSteve.length; card_idx++) {
+    if (rank.indexOf(deckSteve[card_idx]) > rank.indexOf(deckJosh[card_idx])) {
+      steve_score++;
+    } else if (rank.indexOf(deckSteve[card_idx]) < rank.indexOf(deckJosh[card_idx])) {
+        josh_score++;      
+    }
+  }
+  
+  if (steve_score > josh_score) {
+    let msg = "Steve wins " + steve_score + " to " + josh_score;
+  } else if (steve_score < josh_score) {
+    let msg = "Josh wins " + josh_score + " to " + steve_score;
+  } else {
+    let msg = "Tie";
+  }
+  return msg;
+}
