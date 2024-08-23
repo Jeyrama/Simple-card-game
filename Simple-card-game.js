@@ -60,3 +60,21 @@ function winner(deckSteve, deckJosh) {
 }
 
 // or
+
+function winner(deckSteve, deckJosh) {
+  let rank = ['2','3','4','5','6','7','8','9','T','J','Q','K','A'],
+      spoints = 0,
+      jpoints = 0;
+  deckSteve.forEach((el, i) => {
+    rank.indexOf(el) > rank.indexOf(deckJosh[i]) ? spoints ++ :
+    rank.indexOf(el) < rank.indexOf(deckJosh[i]) ? jpoints ++ : 0
+  })
+  
+  const result = (sp, jp) => {
+    if (sp == jp) return 'Tie';
+    if (sp > jp) return `Steve wins ${sp} to ${jp}`;
+    return `Josh wins ${jp} to ${sp}`;
+  }
+  
+  return result(spoints, jpoints)
+}
