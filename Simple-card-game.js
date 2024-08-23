@@ -58,3 +58,5 @@ function winner(deckSteve, deckJosh) {
   }
   return msg;
 }
+
+// or
